@@ -5,11 +5,9 @@
 
 using namespace std;
 
-bool compare(int a, int b) {
-    return a > b;
-}
-
 int main() {
+    ios::sync_with_stdio(false);
+
     int N,M,K;
     int buff;
     int sum=0;
@@ -23,9 +21,9 @@ int main() {
         v.push_back(buff);
     }
 
-    sort(v.begin(), v.end(), compare);
+    sort(v.begin(), v.end(), greater<int>());
 
-    // for (vector<int>::iterator itr = v.begin(); itr!=v.end(); ++itr) {
+    // for (auto itr = v.begin(); itr!=v.end(); ++itr) { // auto 개꿀
     //     cout << *itr << endl;
     // }
 
@@ -43,7 +41,6 @@ int main() {
             break;
         }
     }
-
     printf("%d\n",sum);
 
     return 0;
