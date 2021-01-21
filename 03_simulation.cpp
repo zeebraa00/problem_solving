@@ -11,11 +11,11 @@ int cnt=1; // 방문한 점의 개수
 pair<int,int> coordinates;
 vector<pair<int,int>> direction;
 
-int array[50][50]; // 지도
+int map[50][50]; // 지도
 int check[50][50]; // 0인 곳만 갈 수 있음
 
 int chkArray() { // 해당 방향 한 칸 앞으로 갈 수 있는지 확인
-    if (check[coordinates.first+direction[dir].first][coordinates.second+direction[dir].second] == 0 && array[coordinates.first+direction[dir].first][coordinates.second+direction[dir].second] == 0 ) {
+    if (check[coordinates.first+direction[dir].first][coordinates.second+direction[dir].second] == 0 && map[coordinates.first+direction[dir].first][coordinates.second+direction[dir].second] == 0 ) {
         return 1; // 감
     } else {
         return 0; // 못 감
@@ -23,7 +23,7 @@ int chkArray() { // 해당 방향 한 칸 앞으로 갈 수 있는지 확인
 }
 
 int chkReverse() { // 해당 방향 한 칸 뒤로 갈 수 있는지 확인
-    if (array[coordinates.first-direction[dir].first][coordinates.second-direction[dir].second] == 1) {
+    if (map[coordinates.first-direction[dir].first][coordinates.second-direction[dir].second] == 1) {
         return 0; // 못 감
     } else {
         return 1; // 감
@@ -65,7 +65,7 @@ int main() {
 
     for (int i=0; i<50; i++) {
         for (int j=0; j<50; j++) {
-            array[i][j] = 1;
+            map[i][j] = 1;
             check[i][j] = 1;
         }
     }
@@ -83,7 +83,7 @@ int main() {
     for (int i=0; i<n; i++) {
         for (int j=0; j<m; j++) {
             cin >> buff;
-            array[i][j] = buff;
+            map[i][j] = buff;
             check[i][j] = buff;
         }
     }
