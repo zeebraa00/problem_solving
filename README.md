@@ -1,2 +1,2 @@
 # problem_solving_algorithm
-algorithm study using c++ / c / python
+algorithm study using c++ / python
