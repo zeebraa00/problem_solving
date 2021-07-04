@@ -12,8 +12,9 @@ def backtracking(cnt) :
 
     for i in range(n) :
         if visited[i] == 0 :
-            if path[cnt-1] > i+1 :
-                continue
+            if cnt >= 1 :
+                if path[cnt-1] > i+1 :
+                    continue
             path[cnt] = i+1
             visited[i] = 1
             backtracking(cnt+1)
