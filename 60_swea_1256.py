@@ -8,4 +8,7 @@ for idx in range(tc) :
     for i in range(iters) :
         tmp.append(string[i:])
     tmp.sort()
+    if len(tmp) < goal :
+        print("#"+str(idx+1)+" none")
+        continue
     print("#"+str(idx+1)+" "+tmp[goal-1])
